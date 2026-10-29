@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+/* Values mirror src/shared/tokens.ts (shared with the mobile app). */
+@theme {
+  --color-brand-50: #eef4ff;
+  --color-brand-100: #dbe6fe;
+  --color-brand-500: #3b5bdb;
+  --color-brand-600: #2f4ac0;
+  --color-brand-700: #263b99;
+  --color-brand-900: #1b2961;
+  --color-ok: #16a34a;
+  --color-warn: #d97706;
+  --color-danger: #dc2626;
+  --color-info: #2563eb;
+  --font-sans: var(--font-noto-sans), var(--font-noto-devanagari), ui-sans-serif, system-ui, sans-serif;
+  --radius-card: 14px;
+}
+
+:root {
+  --background: #f6f7fb;
+  --surface: #ffffff;
+  --foreground: #111827;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  color-scheme: light;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* Devanagari names keep the same visual size as Latin text. */
+:lang(mr), :lang(hi), .deva {
+  font-family: var(--font-noto-devanagari), var(--font-noto-sans), sans-serif;
+}
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: #fff; }
+  @page { size: A4 landscape; margin: 10mm; }
+}
